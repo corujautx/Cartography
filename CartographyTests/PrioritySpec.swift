@@ -19,21 +19,21 @@ class PrioritySpec: QuickSpec {
             var constraint: NSLayoutConstraint!
 
             constrain(view) { view in
-                constraint = view.width == 200 ~ LayoutPriority(100)
+                constraint = view.width == 200 ~ 100.0
             }
 
-            expect(constraint.priority).to(equal(LayoutPriority(100)))
+            expect(constraint.priority).to(equal(LayoutPriority(100.0)))
         }
 
         it("should operate on an array of constraints") {
             var constraints: [NSLayoutConstraint]!
 
             constrain(view) { view in
-                constraints = (view.size <= view.superview!.size ~ LayoutPriority(100))
+                constraints = (view.size <= view.superview!.size ~ 100.0)
             }
 
-            expect(constraints[0].priority).to(equal(LayoutPriority(100)))
-            expect(constraints[1].priority).to(equal(LayoutPriority(100)))
+            expect(constraints[0].priority).to(equal(LayoutPriority(100.0)))
+            expect(constraints[1].priority).to(equal(LayoutPriority(100.0)))
         }
     }
 }

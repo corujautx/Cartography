@@ -60,7 +60,7 @@ final class LayoutGuideSpec: QuickSpec {
                     layoutGuide.left >= layoutGuide.owningView!.left
                     layoutGuide.right <= layoutGuide.owningView!.right
 
-                    layoutGuide.center == layoutGuide.owningView!.center ~ .defaultLow
+                    layoutGuide.center == layoutGuide.owningView!.center ~ LayoutPriority(100)
 
                     layoutGuide.width == 200
                     layoutGuide.height == 200
